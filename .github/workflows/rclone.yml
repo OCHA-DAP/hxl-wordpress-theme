@@ -35,7 +35,7 @@ jobs:
           RCLONE_CONFIG_HXL_USER: ${{ secrets.RCLONE_CONFIG_HXL_USER_DEV }}
           RCLONE_CONFIG_HXL_PASS: ${{ secrets.RCLONE_CONFIG_HXL_PASS_DEV }}
         with:
-          args: copy . HXL:${{ env.dest_path }}
+          args: copy . HXL:${{ env.dest_path }} --exclude .git/
 
   # Job name
   rclone-prod:
@@ -56,4 +56,4 @@ jobs:
           RCLONE_CONFIG_HXL_USER: ${{ secrets.RCLONE_CONFIG_HXL_USER_PROD }}
           RCLONE_CONFIG_HXL_PASS: ${{ secrets.RCLONE_CONFIG_HXL_PASS_PROD }}
         with:
-          args: copy . HXL:${{ env.dest_path }}
+          args: copy . HXL:${{ env.dest_path }} --exclude .git/
