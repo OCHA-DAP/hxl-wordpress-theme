@@ -7,6 +7,9 @@
 # track readme.md in the root (i.e. do NOT ignore it)
 !readme.md
 
+# track .github folder in the root (i.e. do NOT ignore it)
+.github
+
 # ignore all files that start with ~
 ~*
 
