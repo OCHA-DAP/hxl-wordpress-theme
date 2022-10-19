@@ -1,0 +1,163 @@
+@import '_functions';
+@import '_variables';
+
+/**
+ * Override parent theme styles
+ */
+
+:root {
+  /**
+   * Site-specific brand colors
+   */
+  --brand-primary: #333; // $color__gray-medium
+  --brand-primary--light: #666;
+  --brand-primary--dark: #fff; // $color__white
+}
+
+/**
+ * Remove specific child styles for header & footer
+ */
+.cd-header {
+  section {
+    padding: unset;
+
+    .cd-ocha-dropdown__heading {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: 1.5;
+    }
+
+    .cd-ocha-dropdown__link {
+      line-height: 1.5;
+
+      a {
+        text-transform: initial;
+        padding-left: 0;
+      }
+    }
+
+    &.cd-ocha {
+      &.cd-ocha__right {
+        float: right;
+
+        .cd-ocha__btn-label {
+          &.cd-ocha__btn-label-faq {
+            .icon-o-help {
+              fill: #eeeeee;
+              height: 14px;
+              margin-right: 10px;
+            }
+
+            span {
+              line-height: 14px;
+            }
+
+            &:hover {
+              span {
+                color: $color__white;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cd-footer {
+  .cd-container {
+    &::after {
+      content: "";
+    }
+  }
+}
+
+/**
+ * Theme padding
+ */
+@media only screen and (min-width: 1200px) {
+  .cd-header {
+    .cd-container,
+    .cd-ocha-dropdown__inner {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  .cd-footer {
+    .cd-footer__inner {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .cd-header {
+    .cd-container,
+    .cd-ocha-dropdown__inner {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .cd-footer {
+    .cd-footer__inner {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+
+/**
+ * "Disable" parent theme overrides
+ */
+
+h1,
+h2,
+h3,
+h4 {
+  color: $color__gray-medium; // headings color
+}
+
+.hero {
+  h1,
+  h3 {
+    color: $color__white; // hero colors
+  }
+}
+
+.btn {
+  &:hover {
+    color: $color__white; // main button hover
+  }
+}
+
+/**
+ * Theme improvements
+ */
+
+pre {
+  white-space: break-spaces; // fix code long lines
+}
+
+/**
+ * Accordion extra styles
+ */
+.accordion-component {
+  .accordion__title {
+    cursor: pointer;
+
+    &.accordion__title--open {
+      background-color: $color__coral-light;
+    }
+
+    h3 {
+      font-size: type-scale(3);
+      color: #444;
+    }
+  }
+
+  .accordion__body--hidden {
+    display: none;
+  }
+}

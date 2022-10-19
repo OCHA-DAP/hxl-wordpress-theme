@@ -1,0 +1,91 @@
+body {
+	color: $color__gray-medium;
+	font-family: 'SourceSansPro';
+	font-size: $system__font-size;
+	line-height: $system__line-height;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'Stag-Book';
+	font-weight: normal;
+}
+
+h1 {
+	font-size: type-scale(1);
+	line-height: 46px;
+	margin: 30px 0;
+	&.special {
+		font-family: 'Stag-Medium';
+		font-size: 50px;
+		line-height: 60px;
+	}
+}
+
+h2 {
+	font-size: type-scale(2);
+	line-height: 34px;
+	margin: 25px 0;
+}
+
+h3 {
+	font-size: type-scale(3);
+	line-height: 24px;
+	margin: 20px 0;
+}
+
+h4 { 
+	font-size: type-scale(4);
+	line-height: 22px;
+	margin: 10px 0;
+}
+
+h5 {
+	font-size: type-scale(5);
+	line-height: 18px;
+	margin: 0;
+}
+
+a {
+	color: $color__coral;
+	text-decoration: none;
+	&.external {	
+		&:after {
+			background: url('../assets/images/icon-external-link.png') no-repeat;
+			background-size: contain;
+			content: '';
+			display: inline-block;
+			margin-left: 5px;
+			width: 12px;
+			height: 12px;
+		}
+	}
+}
+
+p {
+	font-family: 'SourceSansPro';
+	font-size: $system__font-size;
+	line-height: $system__line-height;
+}
+
+.type__color-coral {
+	color: $color__coral
+}
+
+@media only screen and (max-width: $system__breakpoint--small) {
+	h1 {
+		font-size: 24px;
+		line-height: 29px;
+		&.special {
+			font-size: 31px;
+			line-height: 37px;
+		}
+	}
+	h2 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	h3 {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}

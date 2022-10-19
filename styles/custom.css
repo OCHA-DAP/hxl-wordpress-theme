@@ -1,0 +1,119 @@
+/**
+ * Override parent theme styles
+ */
+:root {
+  /**
+   * Site-specific brand colors
+   */
+  --brand-primary: #333;
+  --brand-primary--light: #666;
+  --brand-primary--dark: #fff;
+}
+
+/**
+ * Remove specific child styles for header & footer
+ */
+.cd-header section {
+  padding: unset;
+}
+.cd-header section .cd-ocha-dropdown__heading {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+}
+.cd-header section .cd-ocha-dropdown__link {
+  line-height: 1.5;
+}
+.cd-header section .cd-ocha-dropdown__link a {
+  text-transform: initial;
+  padding-left: 0;
+}
+.cd-header section.cd-ocha.cd-ocha__right {
+  float: right;
+}
+.cd-header section.cd-ocha.cd-ocha__right .cd-ocha__btn-label.cd-ocha__btn-label-faq .icon-o-help {
+  fill: #eeeeee;
+  height: 14px;
+  margin-right: 10px;
+}
+.cd-header section.cd-ocha.cd-ocha__right .cd-ocha__btn-label.cd-ocha__btn-label-faq span {
+  line-height: 14px;
+}
+.cd-header section.cd-ocha.cd-ocha__right .cd-ocha__btn-label.cd-ocha__btn-label-faq:hover span {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+.cd-footer .cd-container::after {
+  content: "";
+}
+
+/**
+ * Theme padding
+ */
+@media only screen and (min-width: 1200px) {
+  .cd-header .cd-container,
+.cd-header .cd-ocha-dropdown__inner {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .cd-footer .cd-footer__inner {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .cd-header .cd-container,
+.cd-header .cd-ocha-dropdown__inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .cd-footer .cd-footer__inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+/**
+ * "Disable" parent theme overrides
+ */
+h1,
+h2,
+h3,
+h4 {
+  color: #333;
+}
+
+.hero h1,
+.hero h3 {
+  color: #FFF;
+}
+
+.btn:hover {
+  color: #FFF;
+}
+
+/**
+ * Theme improvements
+ */
+pre {
+  white-space: break-spaces;
+}
+
+/**
+ * Accordion extra styles
+ */
+.accordion-component .accordion__title {
+  cursor: pointer;
+}
+.accordion-component .accordion__title.accordion__title--open {
+  background-color: #FCF2F2;
+}
+.accordion-component .accordion__title h3 {
+  font-size: 1.3125rem;
+  color: #444;
+}
+.accordion-component .accordion__body--hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=custom.css.map */

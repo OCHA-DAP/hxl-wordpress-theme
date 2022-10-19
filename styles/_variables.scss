@@ -1,0 +1,25 @@
+$color__coral: #F26459;
+$color__coral-light: #FCF2F2;
+$color__gray-light: #F5F5F5;
+$color__gray-medium: #333;
+$color__gray-dark: #252525;
+$color__white: #FFF;
+
+
+$system__site-width: 1170px;
+$system__unit: 16px !default;
+$system__font-size: 1rem;
+$system__line-height: $system__font-size * 1.40;
+$system__typescale: 1.333;
+$system__breakpoint--small: 767px;
+
+
+$type-scale: (
+  -1: 0.75rem,  //small text 12
+  0: 1rem,      //body text 16
+  1: 2.375rem,  //h1 38
+  2: 1.75rem,  //h2 28
+  3: 1.3125rem,  //h3 21
+  4: 1.125rem,    //h4 18
+  5: 0.875rem    //h5 14
+);

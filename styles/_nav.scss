@@ -1,0 +1,329 @@
+header {
+	a {
+		color: $color__gray-medium;
+		padding: 0 15px;
+		text-transform: uppercase;
+		&:last-child {
+			padding-right: 0;
+		}
+		&:hover {
+			color: $color__coral;
+		}
+	}
+	nav {
+		a {
+			border-right: 2px solid $color__gray-medium;
+			&:last-child {
+				border: 0;
+			}
+		}
+	}
+}
+
+.global-header {
+	background-color: $color__gray-medium;
+	.global-header-content {
+	    height: 35px;
+	    display: flex;
+	    align-items: center;
+    	> a {
+		    color: #EEE;
+		    font-family: helvetica, arial, sans-serif;
+		    font-weight: 400;
+		    font-size: 12px;
+	    	padding: 0;
+		    &:hover {
+		    	text-decoration: underline;
+		    }
+	    }
+	    &.active {
+	    	.dropdown-menu {
+	    		display: block;
+	    	}
+	    	.ocha-services {  		
+				  .icon-o-arrow-down {
+			   		display: none;
+			   	}
+				  .icon-o-arrow-up {
+			   		display: block;
+			   	}
+	    	}
+	    }
+		.ocha-services {
+			display: flex;
+	    align-items: center;
+	    text-transform: capitalize;
+			.ocha-logo {
+		    background: url('../assets/images/logo-ocha-white.svg') 50% no-repeat;
+		    background-size: contain;
+		    display: inline-block;
+		    flex-shrink: 0;
+		    height: 18px;
+		    margin-right: 4px;
+		    width: 21px;
+			}
+			.icon-o-arrow-up, 
+			.icon-o-arrow-down {
+	    	margin-left: 10px;
+	    	height: 9px;
+	    	fill: #eeeeee;
+			}
+			.icon-o-arrow-up {
+		   	display: none;
+	   	}
+		}
+		.faq {
+			align-items: center;
+			display: flex;
+			margin-left: auto;
+			.icon-o-help {
+	    	fill: #eeeeee;
+	    	height: 14px;
+  			margin-right: 10px;
+			}
+		}
+		.dropdown-menu {
+	    position: absolute;
+	    top: 35px;
+	    left: 0;
+	    z-index: 1000;
+	    display: none;
+	    float: left;
+	    min-width: 160px;
+	    padding: 5px 0;
+	    margin: 2px 0 0;
+	    font-size: 14px;
+	    text-align: left;
+	    list-style: none;
+	    background-color: #FFF;
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border: 1px solid #CCC;
+	    border: 1px solid rgba(0,0,0,.15);
+	    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		}
+		.ocha-services-menu {
+	    background-color: #333;
+	    background-clip: unset;
+	    border: none;
+	    box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.375);
+	    color: #EEE;
+	    font-family: helvetica, arial, sans-serif;
+	    font-size: 12px;
+	    font-weight: 400;
+	    margin: 0;
+	    padding: 22px 0;
+	    width: 100%;
+	    .list-title {
+	    	font-family: helvetica, arial, sans-serif;
+    		font-size: 12px;
+    		font-weight: 300;
+			}
+		  .ocha-links-list {
+				list-style: none;
+				padding: 0; 
+				li {
+					font-weight: 600;
+					margin-bottom: 12px;
+					a {
+    				color: #EEE;
+    				padding: 0;
+    				text-transform: capitalize;
+    				&:hover {
+    					text-decoration: underline;
+    				}
+					}
+				}
+			}
+			.ocha-see-all-container {
+				height: 46px;
+				position: relative;
+			}
+			.ocha-see-all {    
+				background: #666;
+				border-radius: 0;
+    		color: #EEE;
+				display: block;
+	    	font-family: helvetica, arial, sans-serif;
+		    font-size: 14px;
+		    font-weight: 700;
+		    padding: 12px;
+		    position: absolute;
+		    bottom: 0;
+		    text-align: center;
+		    width: 100%;
+		    &:after {
+		    	display: none;
+		    }
+		    &:hover {
+    			background: rgba(102,102,102,.8);
+		    }
+			}
+			.grid-container {			
+				&:before {
+			    content: " ";
+			    position: absolute;
+			    top: -5px;
+			    left: 120px;
+			    height: 10px;
+			    width: 10px;
+			    background-color: #333;
+			    transform: translate(-50%, 0) rotateZ(45deg);
+				}
+			}
+		}
+	}
+}
+
+.primary-nav {
+	background-color: $color__white;
+	position: relative;
+	.logo {
+		grid-column: 1 / span 3;
+		padding: 0;
+		img {
+			height: 30px;
+		}
+	}
+	nav {
+		align-items: center;
+		color: $color__gray-medium;
+		display: flex;
+		font-family: 'Gotham';
+		font-size: type-scale(5);
+		font-weight: bold;
+		line-height: 14px;
+		grid-column: 4 / span 9;
+		height: 60px;
+		margin-left: auto;
+	}
+}
+.secondary-nav {
+	background-color: #EEE;
+	border-top: 3px solid #CCC;
+	.breadcrumbs {
+		font-family: 'SourceSansPro';
+		font-size: type-scale(-1);
+		grid-column: 1 / -1;
+		height: 22px;
+		a {
+			border-width: 1px;
+			padding: 0 6px;
+			&.active {
+				cursor: default;
+				font-weight: bold;
+   			pointer-events: none;
+			}
+		}
+	}
+}
+.tertiary-nav {
+	ul {
+		margin: 0;
+		padding: 0 0 25px 0;
+		li {
+			list-style-type: none;
+		}
+	}
+	h3 {
+		margin: 0;
+	}
+}
+
+.mobile-nav-toggle {
+	background-color: transparent;
+	border: 0;
+	display: none;
+	padding: 30px;
+	position: absolute;
+	right: 0;
+	top: 5px;
+	z-index: 2;
+	.icon-bar {
+    background-color: $color__gray-medium;
+    display: block;
+    height: system-unit(0.25);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    width: system-unit(2);
+    & + .icon-bar {
+    	margin-top: system-unit(0.375);
+    }
+	}
+	&.expanded {
+		.icon-bar {
+			&:first-child {
+				position: absolute;
+		    top: 12px;
+		    -webkit-transform: rotate(45deg);
+		    -ms-transform: rotate(45deg);
+		    transform: rotate(45deg);
+			}
+			&:nth-child(2) {
+		    -webkit-transform: rotate(-45deg);
+		    -ms-transform: rotate(-45deg);
+		    transform: rotate(-45deg);
+		    position: absolute;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $system__breakpoint--small) {
+	.mobile-nav-toggle {
+		display: block;
+	}
+	.primary-nav {
+		border-bottom: 3px solid #CCC;
+		width: 100%;
+		z-index: 1;
+		.logo {
+			padding: 25px 30px;
+		}
+		&.fixed {
+			position: fixed;
+			top: 0;
+		}
+		nav {
+			align-items: flex-start;
+			background-color: $color__white;
+			display: none;
+			flex-flow: column;
+			height: auto;
+			opacity: 0;
+			padding: 20px;
+			position: absolute;
+			top: 87px;
+			width: 100%;
+			transition: all 0.3s ease;
+			a {
+				border: 0;
+				padding: 10px 0;
+				width: 100%;
+			}
+			&.active {
+				border-bottom: 3px solid #CCC;
+				display: flex;
+				opacity: 1;
+			}
+		}
+	}
+	.secondary-nav {
+		display: none;
+	}
+	.global-header {
+		padding: 0 30px;
+		.global-header-content {
+			.ocha-services-menu {
+				padding-left: 30px;
+				padding-right: 30px;
+				.list-title {
+					&.list-title-empty {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

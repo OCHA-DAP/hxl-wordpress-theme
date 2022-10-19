@@ -1,0 +1,53 @@
+footer {
+	background-color: $color__gray-dark;
+	color: $color__white;
+	flex-shrink: 0;
+	font-size: type-scale(-1);
+	text-align: center;
+	.service{
+		margin: 30px 0 45px;
+		text-align: left;
+		.provided-by{
+			margin-bottom: 10px;
+		}
+		.service-details{
+			display: flex;
+		}
+		.ocha-service{
+			display: flex;
+			.ocha-logo{
+    		border-right: 1px solid $color__white;
+				height: 40px;
+    		margin-right: 10px;   
+    		padding-right: 10px; 
+			}
+			.ocha-text{
+				margin-right: 10px;
+			}
+		}
+	}
+	.license-group{
+		display: flex;
+		.license{
+			margin-right: 10px;
+			text-align: right;
+			width: 290px;
+		}
+		.license-cc > svg {
+			fill: $color__white;
+			margin-top: 10px;
+		}
+	}
+
+	@media only screen and (max-width: $system__breakpoint--small) {
+		.service{
+			margin: 30px 20px;
+			.service-details{
+				flex-flow: column;
+			}
+		}
+		.license-group{
+			margin-top: 30px;
+		}
+	}
+}
