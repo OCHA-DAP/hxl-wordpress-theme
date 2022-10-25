@@ -1,5 +1,18 @@
 <?php
 
+function hxl_admin_init()
+{
+	add_settings_field('hxl-google-tag-manager-token', 'HXL Google Tag Manager Token', 'render_hxl_google_tag_manager_token', 'general');
+	register_setting('general', 'hxl-google-tag-manager-token');
+}
+
+add_action('admin_init', 'hxl_admin_init');
+function render_hxl_google_tag_manager_token()
+{
+	echo '<input name="hxl-google-tag-manager-token" id="hxl-google-tag-manager-token" type="text" value="'.get_option('hxl-google-tag-manager-token').'" class="code">';
+	echo '<p class="description" id="hxl-google-tag-manager-token-description">This token should look like <code>GTM-ABCD123</code>. Leave empty to disable.</p>';
+}
+
 // load parent styles
 add_action('wp_enqueue_scripts', function() {
 	wp_enqueue_style('child-style', get_stylesheet_directory_uri().'/styles/index.css');
@@ -115,3 +128,46 @@ add_filter('wp_title', function($title) {
 	}
 	return $title;
 });
+
+/**
+ * Add Google Tag Manager code (if set) to the head
+ **/
+add_action('wp_head', 'add_gtag_head_code', 1);
+function add_gtag_head_code()
+{
+	$gtag_token = get_option('hxl-google-tag-manager-token');
+	if($gtag_token): ?>
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', '<?=$gtag_token?>');</script>
+        <!-- End Google Tag Manager -->
+	<?php endif;
+}
+
+/**
+ * Add Google Tag Manager noscript code (if set) after opening body tag
+ **/
+add_action('wp_body_open', 'add_gtag_head_noscript_code');
+function add_gtag_head_noscript_code()
+{
+	$gtag_token = get_option('hxl-google-tag-manager-token');
+	if($gtag_token): ?>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=<?= $gtag_token ?>"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+	<?php endif;
+}

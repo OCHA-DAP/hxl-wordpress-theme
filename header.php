@@ -46,6 +46,9 @@
           href="<?= get_stylesheet_directory_uri() ?>/assets/images/icons/icon-512x512.png">
 </head>
 <body <?php body_class(); ?>>
+
+<?php wp_body_open(); ?>
+
 <div class="wrapper">
 	<?php get_template_part('resources/templates/parts/parts', 'header'); ?>
     <header>
