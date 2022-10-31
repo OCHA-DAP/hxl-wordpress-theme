@@ -30,8 +30,8 @@ add_action('wp_enqueue_scripts', function() {
  */
 add_filter('the_content', function($content) {
 	$content = str_ireplace(
-		['src="/', 'href="/'],
-		['src="'.get_stylesheet_directory_uri().'/assets/', 'href="'.get_stylesheet_directory_uri().'/assets/'],
+		['src="/'],
+		['src="'.get_stylesheet_directory_uri().'/assets/'],
 		$content
 	);
 	return $content;
