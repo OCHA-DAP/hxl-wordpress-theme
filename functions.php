@@ -63,7 +63,7 @@ function get_breadcrumb()
 function get_menu_links()
 {
 	foreach(wp_get_nav_menu_items('primary-navigation') as $menu_item) {
-		echo '<a href="'.$menu_item->url.'">'.$menu_item->post_title.'</a>';
+		echo '<a href="'.$menu_item->url.'">'.$menu_item->title.'</a>';
 	}
 }
 
