@@ -42,7 +42,7 @@ add_filter('the_content', function($content) {
  */
 function get_breadcrumb()
 {
-	echo '<a href="'.home_url().'">HXL Home</a>';
+	echo '<a href="'.home_url().'/">HXL Home</a>';
 	if(is_category() || is_single()) {
 		get_the_category('&bull;');
 		if(is_single()) {

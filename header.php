@@ -54,7 +54,7 @@
     <header>
         <div class="primary-nav">
             <div class="grid-container center--vertical">
-                <a class="logo" href="<?= home_url() ?>">
+                <a class="logo" href="<?= home_url() ?>/">
                     <img src="<?= get_stylesheet_directory_uri() ?>/assets/images/logo-hxl.svg"
                          alt="<?= get_bloginfo('name') ?> Logo">
                 </a>
